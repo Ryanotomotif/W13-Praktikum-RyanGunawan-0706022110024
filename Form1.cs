@@ -40,12 +40,11 @@ namespace W13_Praktikum_RyanGunawan_0706022110024
             cb_Nationality.DisplayMember = "Asal";
             cb_Team.DataSource = dtTeam;
             cb_Team.DisplayMember = "Nama Tim";
-            
-            IsiDataPemain(0);
+            DataPemain(0);
             
         }
 
-        public void IsiDataPemain(int Posisi)
+        public void DataPemain (int Posisi)
         {
             tBox_ID.Text = dtPlayer.Rows[Posisi][0].ToString();
             tBox_Nama.Text = dtPlayer.Rows[Posisi][1].ToString();
@@ -66,7 +65,7 @@ namespace W13_Praktikum_RyanGunawan_0706022110024
 
 		private void btn_First_Click_1(object sender, EventArgs e)
 		{
-            IsiDataPemain(0);
+            DataPemain(0);
         }
 
 		private void btn_Prev_Click_1(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace W13_Praktikum_RyanGunawan_0706022110024
             if (PosisiSekarang > 0)
             {
                 PosisiSekarang--;
-                IsiDataPemain(PosisiSekarang);
+                DataPemain(PosisiSekarang);
             }
             else
             {
@@ -87,7 +86,7 @@ namespace W13_Praktikum_RyanGunawan_0706022110024
             if (PosisiSekarang < dtPlayer.Rows.Count - 1)
             {
                 PosisiSekarang++;
-                IsiDataPemain(PosisiSekarang);
+                DataPemain(PosisiSekarang);
             }
             else
             {
@@ -97,7 +96,7 @@ namespace W13_Praktikum_RyanGunawan_0706022110024
 
 		private void btn_Last_Click_1(object sender, EventArgs e)
 		{
-            IsiDataPemain(dtPlayer.Rows.Count - 1);
+            DataPemain(dtPlayer.Rows.Count - 1);
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
